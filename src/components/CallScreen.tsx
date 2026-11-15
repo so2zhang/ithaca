@@ -103,7 +103,8 @@ function LiveCallInner({ planInput, onEnd, onSwitchToText }: CallProps) {
   const [level, setLevel] = useState(0);
   const linesRef = useRef<TranscriptLine[]>([]);
   const started = useRef(false);
-  const ended = useRef(false);
+  const ended = useRef(false); // set once the user ends the call or switches to text
+  const onScreen = useRef(true);
 
   const finish = () => {
     if (ended.current) return;
@@ -118,8 +119,10 @@ function LiveCallInner({ planInput, onEnd, onSwitchToText }: CallProps) {
       setLines(linesRef.current);
     },
     onDisconnect: () => {
+      if (ended.current) return;
       // Bee hung up on her own (she wraps up when done): treat it like pressing End.
       if (linesRef.current.some((l) => l.role === "user")) finish();
+      else setError("Bee hung up before you talked. If this is a new agent, check its Security → Overrides settings in ElevenLabs. You can switch to text.");
     },
     onError: (message) => setError(`Voice error: ${message}. You can switch to text.`),
   });
@@ -131,7 +134,8 @@ function LiveCallInner({ planInput, onEnd, onSwitchToText }: CallProps) {
     started.current = true;
     (async () => {
       const res = await fetch("/api/voice-session", { method: "POST", body: JSON.stringify(planInput) }).catch(() => null);
-      const data = res?.ok ? await res.json() : null;
+      const data = res?.ok ? await res.json().catch(() => null) : null;
+      if (ended.current || !onScreen.current) return; // she left while we were connecting: don't open the mic
       if (!data?.signedUrl) {
         setError("Couldn't start the voice call. Switch to text to keep going.");
         return;
@@ -144,7 +148,14 @@ function LiveCallInner({ planInput, onEnd, onSwitchToText }: CallProps) {
   }, [planInput, startSession]);
 
   // Leaving this screen any other way (e.g. Reset demo) hangs up.
-  useEffect(() => () => endSession(), [endSession]);
+  // (React dev mode mounts twice, so set onScreen back to true on every mount.)
+  useEffect(() => {
+    onScreen.current = true;
+    return () => {
+      onScreen.current = false;
+      endSession();
+    };
+  }, [endSession]);
 
   // Drive the orb from the real audio level.
   useEffect(() => {
@@ -169,8 +180,13 @@ function LiveCallInner({ planInput, onEnd, onSwitchToText }: CallProps) {
       muted={muted}
       onToggleMute={() => setMuted((m) => !m)}
       onEnd={() => {
+        // Nothing to debrief yet: go to text rather than extracting from an empty call.
+        if (linesRef.current.some((l) => l.role === "user")) finish();
+        else {
+          ended.current = true;
+          onSwitchToText();
+        }
         endSession();
-        finish();
       }}
       onSwitchToText={() => {
         ended.current = true;

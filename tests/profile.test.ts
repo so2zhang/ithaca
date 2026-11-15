@@ -35,6 +35,21 @@ describe("S5 guarding against bad LLM output", () => {
     expect(down.weights.career).toBeCloseTo(maya.statedWeights.career - MAX_STEP);
   });
 
+  it("applies one update per attribute, so repeats can't stack past MAX_STEP", () => {
+    const twice: Extraction = { ...update({ attribute: "career", new_weight: 0 }) };
+    twice.preference_updates.push({ ...twice.preference_updates[0] });
+    const { weights, changes } = applyExtraction(maya.statedWeights, twice, members);
+    expect(weights.career).toBeCloseTo(maya.statedWeights.career - MAX_STEP);
+    expect(changes).toHaveLength(1);
+  });
+
+  it("keeps one signal per person when the LLM lists someone twice", () => {
+    const e = { ...demoExtraction, people: [demoExtraction.people[2], { ...demoExtraction.people[2], chemistry: 4 }] };
+    const { signals } = applyExtraction(maya.statedWeights, e, members);
+    expect(signals).toHaveLength(1);
+    expect(signals[0].chemistry).toBe(4);
+  });
+
   it("drops people who weren't in the group and clamps chemistry", () => {
     const e: Extraction = {
       preference_updates: [],

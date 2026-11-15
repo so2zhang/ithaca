@@ -34,8 +34,8 @@ export function LearnedView({ learned, weightsAfter, onNext }: { learned: Learne
               {gaps.map((c) => (
                 <li key={c.attribute}>
                   <p className="text-sm font-semibold">
-                    {ATTRIBUTE_LABELS[c.attribute]}: you said {c.before >= 0.6 ? "it matters a lot" : "it doesn't matter much"}, but you showed{" "}
-                    {c.after > c.before ? "it does" : "it matters less"}.
+                    {ATTRIBUTE_LABELS[c.attribute]}: you said {c.before >= 0.6 ? "it matters a lot" : c.before <= 0.4 ? "it doesn't matter much" : "it matters some"}, but
+                    the debrief showed {c.after > c.before ? "more" : "less"} interest.
                   </p>
                   <p className="mt-1 text-sm text-cream/75 italic">&ldquo;{c.evidence}&rdquo;</p>
                 </li>

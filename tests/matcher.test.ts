@@ -54,6 +54,13 @@ describe("S5 outcome-signal edge cases", () => {
     expect(names(getGroup(maya, maya.statedWeights, [ghost], pool))).toEqual(names(week1));
   });
 
+  it("never seats the same person twice, even with duplicate signals", () => {
+    const jordan: OutcomeSignal = { personId: "jordan", name: "Jordan", chemistry: 5, wantsToSeeAgain: "yes", vibe: "romantic", evidence: "x" };
+    const plan = getGroup(maya, learned.weights, [jordan, jordan], pool);
+    expect(new Set(plan.members.map((m) => m.id)).size).toBe(plan.members.length);
+    expect(plan.reasons.find((r) => r.kind === "returning")?.text).toBe("Jordan is back: you said you'd want to see them again.");
+  });
+
   it("still fills a balanced group when she says no to everyone", () => {
     const allNo = week1.members.map((m): OutcomeSignal => ({ personId: m.id, name: m.name, chemistry: 1, wantsToSeeAgain: "no", vibe: "neither", evidence: "x" }));
     const plan = getGroup(maya, maya.statedWeights, allNo, pool);

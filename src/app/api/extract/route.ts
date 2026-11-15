@@ -17,7 +17,7 @@ export async function POST(request: Request) {
   try {
     const extraction = await extractDebrief({
       prompt: extractionPrompt(maya, plan, weights, transcript),
-      memberNames: plan.members.map((m) => m.name),
+      userText: transcript.filter((l) => l.role === "user").map((l) => l.text).join("\n"),
       call: callClaude,
     });
     return Response.json({ extraction });

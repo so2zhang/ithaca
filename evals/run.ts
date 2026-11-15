@@ -61,7 +61,7 @@ async function main() {
   for (const f of files) {
     const c = CaseSchema.parse(JSON.parse(readFileSync(path.join(dir, f), "utf8")));
     const userText = c.transcript.filter((l) => l.role === "user").map((l) => l.text).join(" ");
-    const e = await extractDebrief({ prompt: extractionPrompt(maya, plan, maya.statedWeights, c.transcript), memberNames: plan.members.map((m) => m.name), call: callClaude });
+    const e = await extractDebrief({ prompt: extractionPrompt(maya, plan, maya.statedWeights, c.transcript), userText, call: callClaude });
     const fails = grade(e, c.expect, userText);
     if (fails.length === 0) passed++;
     console.log(`${fails.length ? "FAIL" : "PASS"}  ${c.name}`);

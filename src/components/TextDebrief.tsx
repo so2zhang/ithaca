@@ -25,7 +25,7 @@ export function TextDebrief({
     setWaiting(true);
     setError(undefined);
     const res = await fetch("/api/chat", { method: "POST", body: JSON.stringify({ ...planInput, transcript }) }).catch(() => null);
-    const data = res?.ok ? await res.json() : null;
+    const data = res?.ok ? await res.json().catch(() => null) : null;
     setWaiting(false);
     if (typeof data?.reply !== "string") {
       setError("Bee couldn't reply. Try again, or tap Finish to use what you've said so far.");

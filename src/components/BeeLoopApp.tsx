@@ -1,6 +1,6 @@
 "use client";
 // The whole demo loop: Plan → debrief (voice or text) → Bee extracts updates → next Plan.
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { demoExtraction, maya, pool } from "@/lib/data";
 import { INITIAL_STATE, loadState, saveState, type DemoState } from "@/lib/demo-state";
 import { ExtractionSchema, type Extraction } from "@/lib/extraction-schema";
@@ -20,6 +20,7 @@ export function BeeLoopApp({ mode }: { mode: "mock" | "live" }) {
   const [screen, setScreen] = useState<Screen>("plan");
   const [lastTranscript, setLastTranscript] = useState<TranscriptLine[]>([]);
   const [loaded, setLoaded] = useState(false);
+  const request = useRef(0); // bumped by each extraction and by Reset, so stale answers are dropped
 
   // Restore saved progress after the first render (localStorage only exists in the browser).
   useEffect(() => {
@@ -50,15 +51,19 @@ export function BeeLoopApp({ mode }: { mode: "mock" | "live" }) {
   }
 
   async function extract(transcript: TranscriptLine[]) {
+    const id = ++request.current;
     setLastTranscript(transcript);
     setScreen("thinking");
     const res = await fetch("/api/extract", { method: "POST", body: JSON.stringify({ ...planInput, transcript }) }).catch(() => null);
-    const parsed = ExtractionSchema.safeParse(res?.ok ? (await res.json()).extraction : null);
+    const data = res?.ok ? await res.json().catch(() => null) : null;
+    if (id !== request.current) return; // the user reset (or retried) meanwhile
+    const parsed = ExtractionSchema.safeParse(data?.extraction);
     if (parsed.success) learn(parsed.data);
     else setScreen("error");
   }
 
   function reset() {
+    request.current++;
     setState(INITIAL_STATE);
     setScreen("plan");
   }

@@ -27,17 +27,29 @@ export const ExtractionSchema = z.object({
 });
 export type Extraction = z.infer<typeof ExtractionSchema>;
 
+const normalize = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+
 // Checks the schema can't express (structured outputs don't enforce number ranges).
-// Returns a list of problems; empty means valid.
-export function checkExtraction(e: Extraction, memberNames: string[]): string[] {
+// `userText` is everything the user said: every evidence quote must appear in it, because
+// quotes are shown to her as her own words. People outside the group are allowed here;
+// applyExtraction drops them. Returns a list of problems; empty means valid.
+export function checkExtraction(e: Extraction, userText: string): string[] {
   const problems: string[] = [];
-  const known = new Set(memberNames.map((n) => n.toLowerCase()));
+  const said = normalize(userText);
+  const quoted = (q: string) => normalize(q).length > 0 && said.includes(normalize(q));
+  const seenPeople = new Set<string>();
   for (const p of e.people) {
     if (!Number.isInteger(p.chemistry) || p.chemistry < 1 || p.chemistry > 5) problems.push(`${p.name}: chemistry must be an integer 1-5`);
-    if (!known.has(p.name.toLowerCase())) problems.push(`${p.name} was not in the group (${memberNames.join(", ")})`);
+    if (seenPeople.has(normalize(p.name))) problems.push(`${p.name} is listed twice`);
+    seenPeople.add(normalize(p.name));
+    if (!quoted(p.evidence)) problems.push(`${p.name}: evidence "${p.evidence}" is not an exact quote of what the user said`);
   }
+  const seenAttrs = new Set<string>();
   for (const u of e.preference_updates) {
     if (u.new_weight < 0 || u.new_weight > 1) problems.push(`${u.attribute}: new_weight must be between 0 and 1`);
+    if (seenAttrs.has(u.attribute)) problems.push(`${u.attribute} is updated twice`);
+    seenAttrs.add(u.attribute);
+    if (!quoted(u.evidence)) problems.push(`${u.attribute}: evidence "${u.evidence}" is not an exact quote of what the user said`);
   }
   if (!e.summary.trim()) problems.push("summary is empty");
   return problems;

@@ -22,13 +22,13 @@ export const callClaude: ModelCall = async (prompt) => {
 };
 
 // Validate → on failure, retry once with the problems listed → still bad: throw.
-export async function extractDebrief({ prompt, memberNames, call }: { prompt: string; memberNames: string[]; call: ModelCall }): Promise<Extraction> {
+export async function extractDebrief({ prompt, userText, call }: { prompt: string; userText: string; call: ModelCall }): Promise<Extraction> {
   let feedback = "";
   for (let attempt = 1; attempt <= 2; attempt++) {
     try {
       const parsed = ExtractionSchema.safeParse(await call(prompt + feedback));
       const problems = parsed.success
-        ? checkExtraction(parsed.data, memberNames)
+        ? checkExtraction(parsed.data, userText)
         : parsed.error.issues.map((i) => `${i.path.join(".")}: ${i.message}`);
       if (parsed.success && problems.length === 0) return parsed.data;
       feedback = `\n\nYour previous answer had these problems. Fix them:\n- ${problems.join("\n- ")}`;
@@ -36,5 +36,5 @@ export async function extractDebrief({ prompt, memberNames, call }: { prompt: st
       if (attempt === 2) throw err;
     }
   }
-  throw new Error(`Extraction failed validation twice.${feedback}`);
+  throw new Error(`Extraction failed after 2 attempts.${feedback}`);
 }

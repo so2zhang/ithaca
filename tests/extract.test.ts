@@ -1,9 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { demoExtraction } from "@/lib/data";
+import { demoExtraction, demoTranscript } from "@/lib/data";
 import { checkExtraction } from "@/lib/extraction-schema";
 import { extractDebrief, type ModelCall } from "@/lib/server/extract";
 
-const names = ["Ethan", "Marcus", "Jordan", "Priya", "Claire"];
+const userText = demoTranscript.filter((l) => l.role === "user").map((l) => l.text).join("\n");
 const bad = { ...demoExtraction, people: [{ ...demoExtraction.people[0], chemistry: 7 }] };
 
 function scripted(...outputs: unknown[]) {
@@ -19,36 +19,60 @@ function scripted(...outputs: unknown[]) {
 
 describe("S6 extraction validation and retry", () => {
   it("the recorded fixture passes validation", () => {
-    expect(checkExtraction(demoExtraction, names)).toEqual([]);
+    expect(checkExtraction(demoExtraction, userText)).toEqual([]);
   });
 
-  it("flags out-of-range chemistry and unknown people", () => {
-    expect(checkExtraction(bad, names)).toHaveLength(1);
+  it("flags out-of-range chemistry", () => {
+    expect(checkExtraction(bad, userText)).toEqual(["Ethan: chemistry must be an integer 1-5"]);
+  });
+
+  it("allows people outside the group (S5: applyExtraction ignores them)", () => {
     const stranger = { ...demoExtraction, people: [{ ...demoExtraction.people[0], name: "Zed" }] };
-    expect(checkExtraction(stranger, names)[0]).toContain("Zed");
+    expect(checkExtraction(stranger, userText)).toEqual([]);
+  });
+
+  it("flags a person or attribute listed twice", () => {
+    const dupes = {
+      ...demoExtraction,
+      people: [demoExtraction.people[2], demoExtraction.people[2]],
+      preference_updates: [demoExtraction.preference_updates[0], demoExtraction.preference_updates[0]],
+    };
+    expect(checkExtraction(dupes, userText)).toEqual(["Jordan is listed twice", "career is updated twice"]);
+  });
+
+  it("flags evidence that isn't her own words (made up, or Bee's line)", () => {
+    const madeUp = { ...demoExtraction, people: [{ ...demoExtraction.people[2], evidence: "Jordan is my soulmate" }] };
+    expect(checkExtraction(madeUp, userText)[0]).toContain("not an exact quote");
+    const beesWords = { ...demoExtraction, people: [{ ...demoExtraction.people[2], evidence: "the guy who isn't your 'type' was the highlight" }] };
+    expect(checkExtraction(beesWords, userText)[0]).toContain("not an exact quote");
+  });
+
+  it("accepts quotes with different punctuation or curly apostrophes", () => {
+    const curly = { ...demoExtraction, people: [{ ...demoExtraction.people[4], evidence: "Claire was sweet but we didn’t really connect" }] };
+    expect(checkExtraction(curly, userText)).toEqual([]);
   });
 
   it("retries once with the problems listed, then succeeds", async () => {
     const { call, prompts } = scripted(bad, demoExtraction);
-    await expect(extractDebrief({ prompt: "P", memberNames: names, call })).resolves.toEqual(demoExtraction);
+    await expect(extractDebrief({ prompt: "P", userText, call })).resolves.toEqual(demoExtraction);
     expect(prompts).toHaveLength(2);
     expect(prompts[1]).toContain("chemistry must be an integer 1-5");
   });
 
   it("retries once after malformed JSON (schema failure)", async () => {
     const { call, prompts } = scripted({ people: "nope" }, demoExtraction);
-    await expect(extractDebrief({ prompt: "P", memberNames: names, call })).resolves.toEqual(demoExtraction);
+    await expect(extractDebrief({ prompt: "P", userText, call })).resolves.toEqual(demoExtraction);
     expect(prompts).toHaveLength(2);
   });
 
   it("gives up after two bad answers", async () => {
     const { call, prompts } = scripted(bad, bad, demoExtraction);
-    await expect(extractDebrief({ prompt: "P", memberNames: names, call })).rejects.toThrow(/twice/);
+    await expect(extractDebrief({ prompt: "P", userText, call })).rejects.toThrow(/2 attempts/);
     expect(prompts).toHaveLength(2);
   });
 
   it("gives up after two API errors", async () => {
     const { call } = scripted(new Error("network"), new Error("network"));
-    await expect(extractDebrief({ prompt: "P", memberNames: names, call })).rejects.toThrow("network");
+    await expect(extractDebrief({ prompt: "P", userText, call })).rejects.toThrow("network");
   });
 });

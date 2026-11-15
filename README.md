@@ -44,7 +44,7 @@ The ElevenLabs dashboard changes often, so labels may differ slightly from these
 5. **LLM**: choose a fast model from the agent's LLM dropdown (a Claude Sonnet or Haiku model if listed). Fast matters more than smart here: it controls how quickly Bee answers.
 6. **Security** tab (this step matters):
    - Turn on **Enable authentication**. The browser can then only connect with a signed URL from our server, so nobody can use your agent with just its ID.
-   - Under **Overrides**, turn on **System prompt** and **First message**. Without this, the app can't give Bee the group's names.
+   - Under **Overrides**, turn on **System prompt** and **First message**. Without this, the app can't give Bee the group's names. (Trade-off: whoever holds a signed URL can set the prompt for that one call. Signed URLs are short-lived and only our server hands them out, which is fine for a demo.)
 7. Save. Copy the **Agent ID** (shown in the agent's settings; starts with `agent_`).
 8. Go to **Settings → API Keys → Create API key**. If it asks for permissions, give it access to Agents / Conversational AI. Copy the key (you only see it once).
 9. In `.env.local`, set `ELEVENLABS_API_KEY`, `ELEVENLABS_AGENT_ID`, `ANTHROPIC_API_KEY` (from console.anthropic.com → API keys), and set `DEMO_MODE=` (empty). Restart `npm run dev`.

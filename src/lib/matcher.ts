@@ -2,7 +2,7 @@
 // Bee Loop's pitch is the learning layer that feeds it (preference weights + outcome signals),
 // so any real matcher with this interface could be dropped in.
 import { ATTRIBUTES, ATTRIBUTE_ADJECTIVES } from "./types";
-import type { Attribute, DemoUser, Gender, Intent, OutcomeSignal, Plan, Reason, Slot, User, Weights } from "./types";
+import type { Attribute, DemoUser, Gender, Intent, OutcomeSignal, Plan, Reason, User, Weights } from "./types";
 import { SLOT_LABELS, VENUES } from "./venues";
 
 const ROMANTIC_SLOTS = 3;
@@ -61,7 +61,8 @@ function groupLean(members: User[], pool: User[]): Attribute[] {
 
 export function getGroup(user: DemoUser, weights: Weights, outcomeSignals: OutcomeSignal[], pool: User[]): Plan {
   const byId = new Map(pool.map((u) => [u.id, u]));
-  const signals = outcomeSignals.filter((s) => byId.has(s.personId)); // ignore unknown people
+  // Ignore unknown people; one signal per person (last wins).
+  const signals = [...new Map(outcomeSignals.filter((s) => byId.has(s.personId)).map((s) => [s.personId, s])).values()];
   const excluded = new Set(signals.filter((s) => s.wantsToSeeAgain === "no").map((s) => s.personId));
   const returning = signals.filter((s) => s.wantsToSeeAgain === "yes").map((s) => byId.get(s.personId)!);
   const liked = signals.filter((s) => s.chemistry >= 4 && s.vibe === "romantic").map((s) => byId.get(s.personId)!);
@@ -98,7 +99,7 @@ export function getGroup(user: DemoUser, weights: Weights, outcomeSignals: Outco
   // Time: the venue slot she's free for that the most members can make.
   const slot = venue.slots
     .filter((s) => user.availability.includes(s))
-    .sort((a, b) => members.filter((m) => m.availability.includes(b)).length - members.filter((m) => m.availability.includes(a)).length)[0] as Slot;
+    .sort((a, b) => members.filter((m) => m.availability.includes(b)).length - members.filter((m) => m.availability.includes(a)).length)[0] ?? user.availability[0];
 
   const everyone = [user, ...members];
   const women = everyone.filter((p) => p.gender === "woman").length;
