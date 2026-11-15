@@ -1,0 +1,20 @@
+name: verify
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup
+        run: if [ -f scripts/cloud-setup.sh ]; then bash scripts/cloud-setup.sh; fi
+      - name: Verify
+        run: |
+          if [ ! -f scripts/verify.sh ]; then
+            echo "::warning::scripts/verify.sh missing. Run /setup-factory."
+            exit 0
+          fi
+          bash scripts/verify.sh

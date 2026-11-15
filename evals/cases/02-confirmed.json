@@ -1,0 +1,58 @@
+{
+  "name": "stated type confirmed: no fake stated-vs-revealed gap",
+  "transcript": [
+    {
+      "role": "bee",
+      "text": "Hey Maya! Rooftop drinks last night. How'd it go?"
+    },
+    {
+      "role": "user",
+      "text": "Really good actually. Marcus and I talked startups all night, he's so driven. I loved it."
+    },
+    {
+      "role": "bee",
+      "text": "Ooh! Would you want to see Marcus again?"
+    },
+    {
+      "role": "user",
+      "text": "Definitely, yes. There was a spark. Jordan was nice but kind of quiet, and we didn't have much to say."
+    },
+    {
+      "role": "bee",
+      "text": "Got it. Anything you'd change about next time?"
+    },
+    {
+      "role": "user",
+      "text": "Honestly no, the rooftop was perfect. I love a fun night out."
+    },
+    {
+      "role": "bee",
+      "text": "Love that. Thanks Maya, I'll put together next week's Plan."
+    }
+  ],
+  "expect": {
+    "people": {
+      "Marcus": {
+        "minChemistry": 4,
+        "wantsToSeeAgain": "yes",
+        "vibe": "romantic"
+      },
+      "Jordan": {
+        "maxChemistry": 3
+      }
+    },
+    "notMentioned": [
+      "Ethan",
+      "Claire",
+      "Priya"
+    ],
+    "weightDirection": {
+      "career": "unchanged",
+      "outdoors": "unchanged"
+    },
+    "notStatedVsRevealed": [
+      "career",
+      "nightlife"
+    ]
+  }
+}

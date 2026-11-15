@@ -1,0 +1,17 @@
+[
+  { "role": "bee", "text": "Hey Maya! So, rooftop drinks on Congress last night. How'd it go? Give me the honest version." },
+  { "role": "user", "text": "Honestly? Better than I expected, but not for the reasons I thought." },
+  { "role": "bee", "text": "Ooh, okay, I need details. Let's start with Ethan. How was talking to him?" },
+  { "role": "user", "text": "Ethan was fine. Super polished. But he talked about his deal for like forty minutes and I kind of zoned out. I don't need to see him again." },
+  { "role": "bee", "text": "Ha, noted. No more deal talk. What about Marcus?" },
+  { "role": "user", "text": "Marcus was nice, really smart. But it felt more like a networking thing than a date thing. Maybe as a friend." },
+  { "role": "bee", "text": "Got it. And Jordan, the sound engineer?" },
+  { "role": "user", "text": "Okay, Jordan was the surprise. He's not my usual type at all. We ended up talking about hiking the Greenbelt for an hour, and he told me about his band. I was laughing the whole time. I'd totally see him again." },
+  { "role": "bee", "text": "I love that. So the guy who isn't your 'type' was the highlight. What do you think it was?" },
+  { "role": "user", "text": "I think I liked that he was excited about stuff that wasn't work. I say I want ambitious, but I actually want someone who has a life outside their job. And I miss being outside. I used to hike all the time." },
+  { "role": "bee", "text": "That's a really good insight. How about Priya and Claire?" },
+  { "role": "user", "text": "Priya was great, we're already planning to play tennis. Claire was sweet, but we didn't really connect." },
+  { "role": "bee", "text": "A tennis friend, love it. Last one: anything you'd change about next week's Plan?" },
+  { "role": "user", "text": "Maybe less of a scene? The rooftop was loud. Something where you can actually talk, or do something." },
+  { "role": "bee", "text": "Totally. I've got a really good picture now. Thanks, Maya. I'll put together next week's Plan." }
+]

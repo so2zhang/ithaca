@@ -10,7 +10,7 @@ Only run this when the human, in chat, has told you to merge a specific PR. "Loo
 1. **Identify the PR.** `gh pr view <N> --json number,title,headRefName,baseRefName,isDraft,mergeable,reviewDecision,statusCheckRollup,body,labels`. If the human didn't give a number and there's more than one open PR, ask which.
 2. **Pre-merge checks.** Stop and report (don't merge) if any fail:
    - Not a draft, `mergeable` is `MERGEABLE`, base is `main`.
-   - All CI checks passed (`gh pr checks <N>`). Pending → tell the human and wait; don't poll in a loop.
+   - `scripts/verify.sh` exists, and the `verify` CI check (`.github/workflows/verify.yml`) passed: `gh pr checks <N>`. No checks reported → stop, CI isn't running. Pending → tell the human and wait; don't poll in a loop.
    - PR body has every verification scenario checked off with evidence, and the `reviewer-correctness` verdict is APPROVE.
    - Branch is up to date with main, or a rebase/merge from main is clean and `bash scripts/verify.sh` still passes after it.
    - Risk label `high`: confirm the human said they looked at it themselves. If unsure, ask once.
