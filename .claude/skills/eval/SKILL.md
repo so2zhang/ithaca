@@ -20,4 +20,4 @@ Case format (`evals/cases/*.json`):
 3. **Error analysis.** Read the raw failing outputs yourself, not just the judge's reasons. Group failures into 3–6 named categories with counts and one example each.
 4. For each category, propose one concrete change and say what result would show it worked.
 
-Rules: never edit or delete anything in `evals/cases/` or `evals/holdout/` to raise the score. Holdout only runs when the human asks.
+Rules: never edit or delete anything in `evals/cases/` or `evals/holdout/` to raise the score. Holdout only runs when the human asks, via `EVAL_SET=holdout <runner command>`. The runner picks its case folder from `EVAL_SET` (default `cases`). Never read or list `evals/holdout/` yourself (hooks block it), and report holdout scores only, not the failing inputs.
