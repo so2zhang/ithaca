@@ -1,0 +1,40 @@
+{
+  "name": "vague debrief: don't invent people or preferences",
+  "transcript": [
+    {
+      "role": "bee",
+      "text": "Hey Maya! How was last night?"
+    },
+    {
+      "role": "user",
+      "text": "It was fine. I was tired and left early, honestly."
+    },
+    {
+      "role": "bee",
+      "text": "Totally fair. Did anyone stand out?"
+    },
+    {
+      "role": "user",
+      "text": "Not really. Priya was nice, I guess. I didn't talk to most people."
+    },
+    {
+      "role": "bee",
+      "text": "Got it. Thanks for the honest take, Maya. I'll keep that in mind for next week."
+    }
+  ],
+  "expect": {
+    "notMentioned": [
+      "Ethan",
+      "Marcus",
+      "Jordan",
+      "Claire"
+    ],
+    "weightDirection": {
+      "career": "unchanged",
+      "outdoors": "unchanged",
+      "creative": "unchanged",
+      "nightlife": "unchanged",
+      "bookish": "unchanged"
+    }
+  }
+}

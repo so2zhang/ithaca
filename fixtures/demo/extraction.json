@@ -1,0 +1,16 @@
+{
+  "people": [
+    { "name": "Ethan", "chemistry": 2, "wants_to_see_again": "no", "vibe": "neither", "evidence": "he talked about his deal for like forty minutes" },
+    { "name": "Marcus", "chemistry": 3, "wants_to_see_again": "maybe", "vibe": "friend", "evidence": "it felt more like a networking thing than a date thing" },
+    { "name": "Jordan", "chemistry": 5, "wants_to_see_again": "yes", "vibe": "romantic", "evidence": "I was laughing the whole time" },
+    { "name": "Priya", "chemistry": 4, "wants_to_see_again": "yes", "vibe": "friend", "evidence": "we're already planning to play tennis" },
+    { "name": "Claire", "chemistry": 2, "wants_to_see_again": "maybe", "vibe": "neither", "evidence": "Claire was sweet, but we didn't really connect" }
+  ],
+  "preference_updates": [
+    { "attribute": "career", "old_weight": 0.9, "new_weight": 0.5, "direction": "down", "evidence": "I say I want ambitious, but I actually want someone who has a life outside their job", "stated_vs_revealed": true },
+    { "attribute": "outdoors", "old_weight": 0.2, "new_weight": 0.7, "direction": "up", "evidence": "I miss being outside. I used to hike all the time", "stated_vs_revealed": true },
+    { "attribute": "creative", "old_weight": 0.4, "new_weight": 0.7, "direction": "up", "evidence": "he told me about his band. I was laughing the whole time", "stated_vs_revealed": false },
+    { "attribute": "nightlife", "old_weight": 0.6, "new_weight": 0.3, "direction": "down", "evidence": "The rooftop was loud. Something where you can actually talk", "stated_vs_revealed": false }
+  ],
+  "summary": "Maya's stated type (ambitious, finance) didn't land, but she lit up talking to Jordan, an outdoorsy musician, and wants quieter, more active plans. Priya is a new tennis friend."
+}

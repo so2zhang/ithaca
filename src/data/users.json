@@ -1,0 +1,1754 @@
+{
+  "maya": {
+    "id": "maya",
+    "name": "Maya",
+    "age": 27,
+    "gender": "woman",
+    "orientation": "straight",
+    "intent": "serious",
+    "neighborhood": "East Austin",
+    "job": "Product marketing manager",
+    "interests": [
+      "live music",
+      "coffee",
+      "tennis",
+      "travel"
+    ],
+    "traits": {
+      "career": 0.8,
+      "outdoors": 0.4,
+      "creative": 0.6,
+      "nightlife": 0.6,
+      "bookish": 0.5
+    },
+    "availability": [
+      "thu-evening",
+      "sat-day",
+      "sat-evening"
+    ],
+    "chapter": "Moved to Austin for a startup job, stayed for the breakfast tacos. Looking for someone ambitious who keeps up with me.",
+    "ageRange": [
+      26,
+      34
+    ],
+    "statedWeights": {
+      "career": 0.9,
+      "outdoors": 0.2,
+      "creative": 0.4,
+      "nightlife": 0.6,
+      "bookish": 0.5
+    }
+  },
+  "pool": [
+    {
+      "id": "ethan",
+      "name": "Ethan",
+      "age": 29,
+      "gender": "man",
+      "orientation": "straight",
+      "intent": "serious",
+      "neighborhood": "Downtown",
+      "job": "Investment banker",
+      "interests": [
+        "travel",
+        "tennis",
+        "wine"
+      ],
+      "traits": {
+        "career": 0.95,
+        "outdoors": 0.1,
+        "creative": 0.2,
+        "nightlife": 0.9,
+        "bookish": 0.4
+      },
+      "availability": [
+        "thu-evening",
+        "fri-evening",
+        "sat-evening"
+      ],
+      "chapter": "Chapter 1: Wall Street. Chapter 2: Austin, still in a quarter-zip. Chapter 3: hopefully you."
+    },
+    {
+      "id": "marcus",
+      "name": "Marcus",
+      "age": 31,
+      "gender": "man",
+      "orientation": "straight",
+      "intent": "open",
+      "neighborhood": "South Congress",
+      "job": "Fintech founder",
+      "interests": [
+        "startups",
+        "coffee",
+        "travel"
+      ],
+      "traits": {
+        "career": 0.9,
+        "outdoors": 0.2,
+        "creative": 0.3,
+        "nightlife": 0.75,
+        "bookish": 0.6
+      },
+      "availability": [
+        "thu-evening",
+        "sat-day",
+        "sat-evening"
+      ],
+      "chapter": "Building my second company. Will ask about your five-year plan, but in a fun way."
+    },
+    {
+      "id": "jordan",
+      "name": "Jordan",
+      "age": 30,
+      "gender": "man",
+      "orientation": "straight",
+      "intent": "serious",
+      "neighborhood": "East Austin",
+      "job": "Sound engineer, plays bass in a band",
+      "interests": [
+        "live music",
+        "coffee",
+        "hiking"
+      ],
+      "traits": {
+        "career": 0.5,
+        "outdoors": 0.9,
+        "creative": 0.95,
+        "nightlife": 0.5,
+        "bookish": 0.4
+      },
+      "availability": [
+        "thu-evening",
+        "sat-day",
+        "sat-evening"
+      ],
+      "chapter": "Mixes records by day, plays bass in a soul band by night. Sunrise on the Greenbelt is my reset button."
+    },
+    {
+      "id": "priya",
+      "name": "Priya",
+      "age": 28,
+      "gender": "woman",
+      "orientation": "straight",
+      "intent": "serious",
+      "neighborhood": "Mueller",
+      "job": "Strategy consultant",
+      "interests": [
+        "coffee",
+        "tennis",
+        "books"
+      ],
+      "traits": {
+        "career": 0.85,
+        "outdoors": 0.5,
+        "creative": 0.4,
+        "nightlife": 0.6,
+        "bookish": 0.6
+      },
+      "availability": [
+        "thu-evening",
+        "sat-day",
+        "sat-evening"
+      ],
+      "chapter": "Consultant who reads three books at once. Looking for a tennis partner and, eventually, a person."
+    },
+    {
+      "id": "claire",
+      "name": "Claire",
+      "age": 30,
+      "gender": "woman",
+      "orientation": "straight",
+      "intent": "serious",
+      "neighborhood": "Clarksville",
+      "job": "Corporate lawyer",
+      "interests": [
+        "travel",
+        "wine",
+        "yoga"
+      ],
+      "traits": {
+        "career": 0.9,
+        "outdoors": 0.2,
+        "creative": 0.2,
+        "nightlife": 0.7,
+        "bookish": 0.5
+      },
+      "availability": [
+        "thu-evening",
+        "sat-evening"
+      ],
+      "chapter": "Lawyer, wine-list over-thinker, planning a trip to Lisbon I will absolutely over-plan."
+    },
+    {
+      "id": "leo",
+      "name": "Leo",
+      "age": 29,
+      "gender": "man",
+      "orientation": "straight",
+      "intent": "serious",
+      "neighborhood": "Holly",
+      "job": "Climbing-gym route setter & guitarist",
+      "interests": [
+        "live music",
+        "climbing",
+        "coffee"
+      ],
+      "traits": {
+        "career": 0.45,
+        "outdoors": 0.95,
+        "creative": 0.85,
+        "nightlife": 0.35,
+        "bookish": 0.5
+      },
+      "availability": [
+        "sat-day",
+        "sat-evening",
+        "sun-day"
+      ],
+      "chapter": "Sets routes at a climbing gym, writes songs badly on purpose. Will drag you to a barbecue line at 9am."
+    },
+    {
+      "id": "diego",
+      "name": "Diego",
+      "age": 31,
+      "gender": "man",
+      "orientation": "bi",
+      "intent": "serious",
+      "neighborhood": "Travis Heights",
+      "job": "Landscape photographer",
+      "interests": [
+        "photography",
+        "hiking",
+        "travel"
+      ],
+      "traits": {
+        "career": 0.4,
+        "outdoors": 0.9,
+        "creative": 0.8,
+        "nightlife": 0.25,
+        "bookish": 0.6
+      },
+      "availability": [
+        "sat-day",
+        "sat-evening",
+        "sun-day"
+      ],
+      "chapter": "Former park ranger, now photographing Texas Hill Country. Ask me about the best swimming holes."
+    },
+    {
+      "id": "hana",
+      "name": "Hana",
+      "age": 27,
+      "gender": "woman",
+      "orientation": "bi",
+      "intent": "open",
+      "neighborhood": "North Loop",
+      "job": "Ceramicist & trail runner",
+      "interests": [
+        "trail running",
+        "ceramics",
+        "coffee"
+      ],
+      "traits": {
+        "career": 0.5,
+        "outdoors": 0.9,
+        "creative": 0.7,
+        "nightlife": 0.3,
+        "bookish": 0.6
+      },
+      "availability": [
+        "sat-day",
+        "sun-day",
+        "thu-evening"
+      ],
+      "chapter": "Throws pots, runs trails, makes too much sourdough. New to Austin and collecting friends."
+    },
+    {
+      "id": "u01",
+      "name": "Isaac",
+      "age": 26,
+      "gender": "man",
+      "orientation": "straight",
+      "intent": "open",
+      "neighborhood": "East Austin",
+      "job": "electrician",
+      "interests": [
+        "travel",
+        "trail running",
+        "wine"
+      ],
+      "traits": {
+        "career": 0.09,
+        "outdoors": 0.39,
+        "creative": 0.26,
+        "nightlife": 0.11,
+        "bookish": 0.15
+      },
+      "availability": [
+        "sat-day",
+        "sun-day"
+      ],
+      "chapter": "Electrician by day. Weekends are for travel and trail running. Currently obsessed with wine."
+    },
+    {
+      "id": "u02",
+      "name": "Noah",
+      "age": 25,
+      "gender": "man",
+      "orientation": "straight",
+      "intent": "serious",
+      "neighborhood": "Hyde Park",
+      "job": "electrician",
+      "interests": [
+        "art galleries",
+        "hiking",
+        "podcasts"
+      ],
+      "traits": {
+        "career": 0.28,
+        "outdoors": 0.21,
+        "creative": 0.42,
+        "nightlife": 0.51,
+        "bookish": 0.22
+      },
+      "availability": [
+        "thu-evening",
+        "fri-evening",
+        "sat-evening",
+        "sun-day"
+      ],
+      "chapter": "Electrician by day. Weekends are for art galleries and hiking. Currently obsessed with podcasts."
+    },
+    {
+      "id": "u03",
+      "name": "Luca",
+      "age": 24,
+      "gender": "man",
+      "orientation": "bi",
+      "intent": "casual",
+      "neighborhood": "Holly",
+      "job": "barista & DJ",
+      "interests": [
+        "photography",
+        "cooking",
+        "live music"
+      ],
+      "traits": {
+        "career": 0.51,
+        "outdoors": 0.2,
+        "creative": 0.32,
+        "nightlife": 0.15,
+        "bookish": 0.59
+      },
+      "availability": [
+        "sun-day",
+        "sat-evening",
+        "fri-evening"
+      ],
+      "chapter": "Barista & DJ by day. Weekends are for photography and cooking. Currently obsessed with live music."
+    },
+    {
+      "id": "u04",
+      "name": "Andre",
+      "age": 22,
+      "gender": "man",
+      "orientation": "gay",
+      "intent": "casual",
+      "neighborhood": "South Congress",
+      "job": "chef",
+      "interests": [
+        "board games",
+        "paddleboarding",
+        "hiking"
+      ],
+      "traits": {
+        "career": 0.09,
+        "outdoors": 0.57,
+        "creative": 0.56,
+        "nightlife": 0.15,
+        "bookish": 0.14
+      },
+      "availability": [
+        "sat-day",
+        "fri-evening",
+        "sun-day"
+      ],
+      "chapter": "Chef by day. Weekends are for board games and paddleboarding. Currently obsessed with hiking."
+    },
+    {
+      "id": "u05",
+      "name": "Victor",
+      "age": 34,
+      "gender": "man",
+      "orientation": "straight",
+      "intent": "friends-only",
+      "neighborhood": "Clarksville",
+      "job": "UX designer",
+      "interests": [
+        "climbing",
+        "photography",
+        "yoga"
+      ],
+      "traits": {
+        "career": 0.58,
+        "outdoors": 0.49,
+        "creative": 0.06,
+        "nightlife": 0.57,
+        "bookish": 0.56
+      },
+      "availability": [
+        "sat-day",
+        "thu-evening",
+        "fri-evening"
+      ],
+      "chapter": "UX designer by day. Weekends are for climbing and photography. Currently obsessed with yoga."
+    },
+    {
+      "id": "u06",
+      "name": "Pablo",
+      "age": 25,
+      "gender": "man",
+      "orientation": "straight",
+      "intent": "serious",
+      "neighborhood": "Mueller",
+      "job": "photographer",
+      "interests": [
+        "coffee",
+        "yoga",
+        "hiking"
+      ],
+      "traits": {
+        "career": 0.44,
+        "outdoors": 0.52,
+        "creative": 0.16,
+        "nightlife": 0.38,
+        "bookish": 0.57
+      },
+      "availability": [
+        "sat-day",
+        "thu-evening"
+      ],
+      "chapter": "Photographer by day. Weekends are for coffee and yoga. Currently obsessed with hiking."
+    },
+    {
+      "id": "u07",
+      "name": "Tyler",
+      "age": 22,
+      "gender": "man",
+      "orientation": "straight",
+      "intent": "serious",
+      "neighborhood": "Mueller",
+      "job": "chef",
+      "interests": [
+        "cooking",
+        "travel",
+        "ceramics"
+      ],
+      "traits": {
+        "career": 0.25,
+        "outdoors": 0.55,
+        "creative": 0.51,
+        "nightlife": 0.4,
+        "bookish": 0.46
+      },
+      "availability": [
+        "fri-evening",
+        "sat-day",
+        "thu-evening"
+      ],
+      "chapter": "Chef by day. Weekends are for cooking and travel. Currently obsessed with ceramics."
+    },
+    {
+      "id": "u08",
+      "name": "Lena",
+      "age": 24,
+      "gender": "woman",
+      "orientation": "bi",
+      "intent": "serious",
+      "neighborhood": "Mueller",
+      "job": "software engineer",
+      "interests": [
+        "basketball",
+        "hiking",
+        "coffee"
+      ],
+      "traits": {
+        "career": 0.55,
+        "outdoors": 0.1,
+        "creative": 0.2,
+        "nightlife": 0.07,
+        "bookish": 0.37
+      },
+      "availability": [
+        "sun-day",
+        "fri-evening",
+        "sat-day"
+      ],
+      "chapter": "Software engineer by day. Weekends are for basketball and hiking. Currently obsessed with coffee."
+    },
+    {
+      "id": "u09",
+      "name": "Nate",
+      "age": 26,
+      "gender": "man",
+      "orientation": "bi",
+      "intent": "open",
+      "neighborhood": "Zilker",
+      "job": "software engineer",
+      "interests": [
+        "books",
+        "paddleboarding",
+        "art galleries"
+      ],
+      "traits": {
+        "career": 0.28,
+        "outdoors": 0.12,
+        "creative": 0.14,
+        "nightlife": 0.24,
+        "bookish": 0.09
+      },
+      "availability": [
+        "sat-day",
+        "thu-evening",
+        "fri-evening"
+      ],
+      "chapter": "Software engineer by day. Weekends are for books and paddleboarding. Currently obsessed with art galleries."
+    },
+    {
+      "id": "u10",
+      "name": "June",
+      "age": 34,
+      "gender": "woman",
+      "orientation": "straight",
+      "intent": "serious",
+      "neighborhood": "North Loop",
+      "job": "accountant",
+      "interests": [
+        "tennis",
+        "trail running",
+        "podcasts"
+      ],
+      "traits": {
+        "career": 0.14,
+        "outdoors": 0.21,
+        "creative": 0.27,
+        "nightlife": 0.6,
+        "bookish": 0.36
+      },
+      "availability": [
+        "sun-day",
+        "fri-evening"
+      ],
+      "chapter": "Accountant by day. Weekends are for tennis and trail running. Currently obsessed with podcasts."
+    },
+    {
+      "id": "u11",
+      "name": "Willa",
+      "age": 26,
+      "gender": "woman",
+      "orientation": "gay",
+      "intent": "casual",
+      "neighborhood": "South Congress",
+      "job": "nurse",
+      "interests": [
+        "travel",
+        "hiking",
+        "tennis"
+      ],
+      "traits": {
+        "career": 0.12,
+        "outdoors": 0.06,
+        "creative": 0.22,
+        "nightlife": 0.06,
+        "bookish": 0.42
+      },
+      "availability": [
+        "thu-evening",
+        "sat-evening",
+        "fri-evening"
+      ],
+      "chapter": "Nurse by day. Weekends are for travel and hiking. Currently obsessed with tennis."
+    },
+    {
+      "id": "u12",
+      "name": "Zoe",
+      "age": 27,
+      "gender": "woman",
+      "orientation": "straight",
+      "intent": "open",
+      "neighborhood": "Zilker",
+      "job": "photographer",
+      "interests": [
+        "startups",
+        "board games",
+        "yoga"
+      ],
+      "traits": {
+        "career": 0.12,
+        "outdoors": 0.46,
+        "creative": 0.49,
+        "nightlife": 0.5,
+        "bookish": 0.4
+      },
+      "availability": [
+        "sat-evening",
+        "sat-day"
+      ],
+      "chapter": "Photographer by day. Weekends are for startups and board games. Currently obsessed with yoga."
+    },
+    {
+      "id": "u13",
+      "name": "Celeste",
+      "age": 29,
+      "gender": "woman",
+      "orientation": "straight",
+      "intent": "open",
+      "neighborhood": "Downtown",
+      "job": "product manager",
+      "interests": [
+        "tennis",
+        "hiking",
+        "yoga"
+      ],
+      "traits": {
+        "career": 0.44,
+        "outdoors": 0.57,
+        "creative": 0.27,
+        "nightlife": 0.26,
+        "bookish": 0.46
+      },
+      "availability": [
+        "thu-evening",
+        "sun-day",
+        "sat-day",
+        "fri-evening"
+      ],
+      "chapter": "Product manager by day. Weekends are for tennis and hiking. Currently obsessed with yoga."
+    },
+    {
+      "id": "u14",
+      "name": "Iris",
+      "age": 26,
+      "gender": "woman",
+      "orientation": "straight",
+      "intent": "friends-only",
+      "neighborhood": "Travis Heights",
+      "job": "data analyst",
+      "interests": [
+        "podcasts",
+        "ceramics",
+        "basketball"
+      ],
+      "traits": {
+        "career": 0.12,
+        "outdoors": 0.24,
+        "creative": 0.42,
+        "nightlife": 0.28,
+        "bookish": 0.51
+      },
+      "availability": [
+        "thu-evening",
+        "sat-evening"
+      ],
+      "chapter": "Data analyst by day. Weekends are for podcasts and ceramics. Currently obsessed with basketball."
+    },
+    {
+      "id": "u15",
+      "name": "Hugo",
+      "age": 29,
+      "gender": "man",
+      "orientation": "straight",
+      "intent": "open",
+      "neighborhood": "Travis Heights",
+      "job": "electrician",
+      "interests": [
+        "live music",
+        "yoga",
+        "travel"
+      ],
+      "traits": {
+        "career": 0.33,
+        "outdoors": 0.57,
+        "creative": 0.24,
+        "nightlife": 0.28,
+        "bookish": 0.58
+      },
+      "availability": [
+        "sun-day",
+        "sat-day",
+        "sat-evening",
+        "fri-evening"
+      ],
+      "chapter": "Electrician by day. Weekends are for live music and yoga. Currently obsessed with travel."
+    },
+    {
+      "id": "u16",
+      "name": "River",
+      "age": 29,
+      "gender": "nonbinary",
+      "orientation": "straight",
+      "intent": "open",
+      "neighborhood": "South Congress",
+      "job": "nurse",
+      "interests": [
+        "climbing",
+        "tennis",
+        "startups"
+      ],
+      "traits": {
+        "career": 0.51,
+        "outdoors": 0.36,
+        "creative": 0.26,
+        "nightlife": 0.38,
+        "bookish": 0.15
+      },
+      "availability": [
+        "sat-day",
+        "sat-evening"
+      ],
+      "chapter": "Nurse by day. Weekends are for climbing and tennis. Currently obsessed with startups."
+    },
+    {
+      "id": "u17",
+      "name": "Jonah",
+      "age": 28,
+      "gender": "man",
+      "orientation": "straight",
+      "intent": "open",
+      "neighborhood": "South Congress",
+      "job": "physical therapist",
+      "interests": [
+        "ceramics",
+        "trail running",
+        "film"
+      ],
+      "traits": {
+        "career": 0.39,
+        "outdoors": 0.25,
+        "creative": 0.09,
+        "nightlife": 0.1,
+        "bookish": 0.35
+      },
+      "availability": [
+        "fri-evening",
+        "sat-day",
+        "sun-day"
+      ],
+      "chapter": "Physical therapist by day. Weekends are for ceramics and trail running. Currently obsessed with film."
+    },
+    {
+      "id": "u18",
+      "name": "Caleb",
+      "age": 31,
+      "gender": "man",
+      "orientation": "straight",
+      "intent": "open",
+      "neighborhood": "Zilker",
+      "job": "accountant",
+      "interests": [
+        "travel",
+        "tennis",
+        "yoga"
+      ],
+      "traits": {
+        "career": 0.1,
+        "outdoors": 0.49,
+        "creative": 0.46,
+        "nightlife": 0.54,
+        "bookish": 0.45
+      },
+      "availability": [
+        "sat-evening",
+        "thu-evening",
+        "fri-evening",
+        "sat-day"
+      ],
+      "chapter": "Accountant by day. Weekends are for travel and tennis. Currently obsessed with yoga."
+    },
+    {
+      "id": "u19",
+      "name": "Maren",
+      "age": 27,
+      "gender": "woman",
+      "orientation": "straight",
+      "intent": "open",
+      "neighborhood": "Zilker",
+      "job": "physical therapist",
+      "interests": [
+        "books",
+        "coffee",
+        "podcasts"
+      ],
+      "traits": {
+        "career": 0.26,
+        "outdoors": 0.18,
+        "creative": 0.35,
+        "nightlife": 0.28,
+        "bookish": 0.4
+      },
+      "availability": [
+        "sat-day",
+        "sun-day"
+      ],
+      "chapter": "Physical therapist by day. Weekends are for books and coffee. Currently obsessed with podcasts."
+    },
+    {
+      "id": "u20",
+      "name": "Quinn",
+      "age": 22,
+      "gender": "nonbinary",
+      "orientation": "straight",
+      "intent": "friends-only",
+      "neighborhood": "Zilker",
+      "job": "architect",
+      "interests": [
+        "podcasts",
+        "cooking",
+        "photography"
+      ],
+      "traits": {
+        "career": 0.44,
+        "outdoors": 0.47,
+        "creative": 0.45,
+        "nightlife": 0.23,
+        "bookish": 0.6
+      },
+      "availability": [
+        "fri-evening",
+        "sat-day",
+        "thu-evening"
+      ],
+      "chapter": "Architect by day. Weekends are for podcasts and cooking. Currently obsessed with photography."
+    },
+    {
+      "id": "u21",
+      "name": "Simon",
+      "age": 27,
+      "gender": "man",
+      "orientation": "gay",
+      "intent": "casual",
+      "neighborhood": "Mueller",
+      "job": "physical therapist",
+      "interests": [
+        "wine",
+        "trail running",
+        "live music"
+      ],
+      "traits": {
+        "career": 0.33,
+        "outdoors": 0.47,
+        "creative": 0.1,
+        "nightlife": 0.32,
+        "bookish": 0.19
+      },
+      "availability": [
+        "fri-evening",
+        "sat-day",
+        "thu-evening",
+        "sat-evening"
+      ],
+      "chapter": "Physical therapist by day. Weekends are for wine and trail running. Currently obsessed with live music."
+    },
+    {
+      "id": "u22",
+      "name": "Margo",
+      "age": 22,
+      "gender": "woman",
+      "orientation": "bi",
+      "intent": "serious",
+      "neighborhood": "South Congress",
+      "job": "physical therapist",
+      "interests": [
+        "ceramics",
+        "podcasts",
+        "coffee"
+      ],
+      "traits": {
+        "career": 0.45,
+        "outdoors": 0.44,
+        "creative": 0.46,
+        "nightlife": 0.1,
+        "bookish": 0.6
+      },
+      "availability": [
+        "thu-evening",
+        "sat-day"
+      ],
+      "chapter": "Physical therapist by day. Weekends are for ceramics and podcasts. Currently obsessed with coffee."
+    },
+    {
+      "id": "u23",
+      "name": "Reid",
+      "age": 34,
+      "gender": "man",
+      "orientation": "straight",
+      "intent": "open",
+      "neighborhood": "Downtown",
+      "job": "physical therapist",
+      "interests": [
+        "podcasts",
+        "film",
+        "wine"
+      ],
+      "traits": {
+        "career": 0.26,
+        "outdoors": 0.1,
+        "creative": 0.4,
+        "nightlife": 0.54,
+        "bookish": 0.27
+      },
+      "availability": [
+        "sun-day",
+        "fri-evening",
+        "thu-evening"
+      ],
+      "chapter": "Physical therapist by day. Weekends are for podcasts and film. Currently obsessed with wine."
+    },
+    {
+      "id": "u24",
+      "name": "Mateo",
+      "age": 33,
+      "gender": "man",
+      "orientation": "straight",
+      "intent": "open",
+      "neighborhood": "Holly",
+      "job": "accountant",
+      "interests": [
+        "live music",
+        "wine",
+        "climbing"
+      ],
+      "traits": {
+        "career": 0.45,
+        "outdoors": 0.22,
+        "creative": 0.26,
+        "nightlife": 0.46,
+        "bookish": 0.37
+      },
+      "availability": [
+        "fri-evening",
+        "sun-day",
+        "sat-evening",
+        "thu-evening"
+      ],
+      "chapter": "Accountant by day. Weekends are for live music and wine. Currently obsessed with climbing."
+    },
+    {
+      "id": "u25",
+      "name": "Jade",
+      "age": 33,
+      "gender": "woman",
+      "orientation": "bi",
+      "intent": "friends-only",
+      "neighborhood": "Hyde Park",
+      "job": "accountant",
+      "interests": [
+        "cooking",
+        "trail running",
+        "coffee"
+      ],
+      "traits": {
+        "career": 0.2,
+        "outdoors": 0.15,
+        "creative": 0.32,
+        "nightlife": 0.31,
+        "bookish": 0.24
+      },
+      "availability": [
+        "sat-day",
+        "thu-evening",
+        "sun-day"
+      ],
+      "chapter": "Accountant by day. Weekends are for cooking and trail running. Currently obsessed with coffee."
+    },
+    {
+      "id": "u26",
+      "name": "Ben",
+      "age": 29,
+      "gender": "man",
+      "orientation": "straight",
+      "intent": "open",
+      "neighborhood": "South Congress",
+      "job": "accountant",
+      "interests": [
+        "wine",
+        "board games",
+        "ceramics"
+      ],
+      "traits": {
+        "career": 0.36,
+        "outdoors": 0.17,
+        "creative": 0.09,
+        "nightlife": 0.57,
+        "bookish": 0.09
+      },
+      "availability": [
+        "thu-evening",
+        "sun-day",
+        "fri-evening"
+      ],
+      "chapter": "Accountant by day. Weekends are for wine and board games. Currently obsessed with ceramics."
+    },
+    {
+      "id": "u27",
+      "name": "Daphne",
+      "age": 32,
+      "gender": "woman",
+      "orientation": "gay",
+      "intent": "open",
+      "neighborhood": "North Loop",
+      "job": "architect",
+      "interests": [
+        "books",
+        "basketball",
+        "photography"
+      ],
+      "traits": {
+        "career": 0.29,
+        "outdoors": 0.39,
+        "creative": 0.33,
+        "nightlife": 0.43,
+        "bookish": 0.3
+      },
+      "availability": [
+        "sat-day",
+        "sat-evening",
+        "sun-day"
+      ],
+      "chapter": "Architect by day. Weekends are for books and basketball. Currently obsessed with photography."
+    },
+    {
+      "id": "u28",
+      "name": "Dev",
+      "age": 31,
+      "gender": "man",
+      "orientation": "gay",
+      "intent": "casual",
+      "neighborhood": "Holly",
+      "job": "teacher",
+      "interests": [
+        "paddleboarding",
+        "live music",
+        "board games"
+      ],
+      "traits": {
+        "career": 0.26,
+        "outdoors": 0.42,
+        "creative": 0.09,
+        "nightlife": 0.27,
+        "bookish": 0.22
+      },
+      "availability": [
+        "fri-evening",
+        "sun-day"
+      ],
+      "chapter": "Teacher by day. Weekends are for paddleboarding and live music. Currently obsessed with board games."
+    },
+    {
+      "id": "u29",
+      "name": "Cole",
+      "age": 35,
+      "gender": "man",
+      "orientation": "straight",
+      "intent": "friends-only",
+      "neighborhood": "North Loop",
+      "job": "product manager",
+      "interests": [
+        "hiking",
+        "trail running",
+        "film"
+      ],
+      "traits": {
+        "career": 0.27,
+        "outdoors": 0.09,
+        "creative": 0.21,
+        "nightlife": 0.32,
+        "bookish": 0.43
+      },
+      "availability": [
+        "sun-day",
+        "sat-evening",
+        "sat-day",
+        "thu-evening"
+      ],
+      "chapter": "Product manager by day. Weekends are for hiking and trail running. Currently obsessed with film."
+    },
+    {
+      "id": "u30",
+      "name": "Ash",
+      "age": 35,
+      "gender": "nonbinary",
+      "orientation": "bi",
+      "intent": "serious",
+      "neighborhood": "Downtown",
+      "job": "product manager",
+      "interests": [
+        "cooking",
+        "trail running",
+        "ceramics"
+      ],
+      "traits": {
+        "career": 0.26,
+        "outdoors": 0.14,
+        "creative": 0.1,
+        "nightlife": 0.37,
+        "bookish": 0.21
+      },
+      "availability": [
+        "sun-day",
+        "thu-evening",
+        "sat-evening",
+        "sat-day"
+      ],
+      "chapter": "Product manager by day. Weekends are for cooking and trail running. Currently obsessed with ceramics."
+    },
+    {
+      "id": "u31",
+      "name": "Nora",
+      "age": 27,
+      "gender": "woman",
+      "orientation": "gay",
+      "intent": "friends-only",
+      "neighborhood": "South Congress",
+      "job": "chef",
+      "interests": [
+        "climbing",
+        "live music",
+        "startups"
+      ],
+      "traits": {
+        "career": 0.17,
+        "outdoors": 0.21,
+        "creative": 0.46,
+        "nightlife": 0.07,
+        "bookish": 0.52
+      },
+      "availability": [
+        "sat-evening",
+        "fri-evening",
+        "sun-day",
+        "sat-day"
+      ],
+      "chapter": "Chef by day. Weekends are for climbing and live music. Currently obsessed with startups."
+    },
+    {
+      "id": "u32",
+      "name": "Sky",
+      "age": 25,
+      "gender": "nonbinary",
+      "orientation": "straight",
+      "intent": "friends-only",
+      "neighborhood": "Downtown",
+      "job": "physical therapist",
+      "interests": [
+        "photography",
+        "travel",
+        "film"
+      ],
+      "traits": {
+        "career": 0.45,
+        "outdoors": 0.21,
+        "creative": 0.21,
+        "nightlife": 0.39,
+        "bookish": 0.09
+      },
+      "availability": [
+        "sat-evening",
+        "fri-evening",
+        "thu-evening",
+        "sat-day"
+      ],
+      "chapter": "Physical therapist by day. Weekends are for photography and travel. Currently obsessed with film."
+    },
+    {
+      "id": "u33",
+      "name": "Freya",
+      "age": 31,
+      "gender": "woman",
+      "orientation": "straight",
+      "intent": "serious",
+      "neighborhood": "East Austin",
+      "job": "nurse",
+      "interests": [
+        "tennis",
+        "ceramics",
+        "travel"
+      ],
+      "traits": {
+        "career": 0.59,
+        "outdoors": 0.31,
+        "creative": 0.47,
+        "nightlife": 0.29,
+        "bookish": 0.5
+      },
+      "availability": [
+        "sat-evening",
+        "fri-evening",
+        "sat-day",
+        "thu-evening"
+      ],
+      "chapter": "Nurse by day. Weekends are for tennis and ceramics. Currently obsessed with travel."
+    },
+    {
+      "id": "u34",
+      "name": "Elena",
+      "age": 29,
+      "gender": "woman",
+      "orientation": "straight",
+      "intent": "open",
+      "neighborhood": "Mueller",
+      "job": "brewer",
+      "interests": [
+        "hiking",
+        "board games",
+        "yoga"
+      ],
+      "traits": {
+        "career": 0.51,
+        "outdoors": 0.35,
+        "creative": 0.55,
+        "nightlife": 0.38,
+        "bookish": 0.29
+      },
+      "availability": [
+        "sun-day",
+        "thu-evening",
+        "fri-evening"
+      ],
+      "chapter": "Brewer by day. Weekends are for hiking and board games. Currently obsessed with yoga."
+    },
+    {
+      "id": "u35",
+      "name": "Ruby",
+      "age": 26,
+      "gender": "woman",
+      "orientation": "straight",
+      "intent": "casual",
+      "neighborhood": "Holly",
+      "job": "chef",
+      "interests": [
+        "ceramics",
+        "climbing",
+        "yoga"
+      ],
+      "traits": {
+        "career": 0.46,
+        "outdoors": 0.21,
+        "creative": 0.57,
+        "nightlife": 0.52,
+        "bookish": 0.18
+      },
+      "availability": [
+        "thu-evening",
+        "sat-day",
+        "sun-day",
+        "fri-evening"
+      ],
+      "chapter": "Chef by day. Weekends are for ceramics and climbing. Currently obsessed with yoga."
+    },
+    {
+      "id": "u36",
+      "name": "Remy",
+      "age": 29,
+      "gender": "nonbinary",
+      "orientation": "straight",
+      "intent": "casual",
+      "neighborhood": "Downtown",
+      "job": "teacher",
+      "interests": [
+        "travel",
+        "live music",
+        "coffee"
+      ],
+      "traits": {
+        "career": 0.08,
+        "outdoors": 0.27,
+        "creative": 0.21,
+        "nightlife": 0.26,
+        "bookish": 0.13
+      },
+      "availability": [
+        "sat-day",
+        "thu-evening",
+        "sat-evening"
+      ],
+      "chapter": "Teacher by day. Weekends are for travel and live music. Currently obsessed with coffee."
+    },
+    {
+      "id": "u37",
+      "name": "Rafael",
+      "age": 32,
+      "gender": "man",
+      "orientation": "gay",
+      "intent": "serious",
+      "neighborhood": "Mueller",
+      "job": "chef",
+      "interests": [
+        "travel",
+        "hiking",
+        "coffee"
+      ],
+      "traits": {
+        "career": 0.34,
+        "outdoors": 0.52,
+        "creative": 0.57,
+        "nightlife": 0.57,
+        "bookish": 0.18
+      },
+      "availability": [
+        "sun-day",
+        "sat-day",
+        "fri-evening"
+      ],
+      "chapter": "Chef by day. Weekends are for travel and hiking. Currently obsessed with coffee."
+    },
+    {
+      "id": "u38",
+      "name": "Rosa",
+      "age": 33,
+      "gender": "woman",
+      "orientation": "straight",
+      "intent": "serious",
+      "neighborhood": "Holly",
+      "job": "product manager",
+      "interests": [
+        "hiking",
+        "travel",
+        "books"
+      ],
+      "traits": {
+        "career": 0.55,
+        "outdoors": 0.5,
+        "creative": 0.07,
+        "nightlife": 0.18,
+        "bookish": 0.55
+      },
+      "availability": [
+        "thu-evening",
+        "sun-day",
+        "fri-evening"
+      ],
+      "chapter": "Product manager by day. Weekends are for hiking and travel. Currently obsessed with books."
+    },
+    {
+      "id": "u39",
+      "name": "Gabe",
+      "age": 29,
+      "gender": "man",
+      "orientation": "gay",
+      "intent": "serious",
+      "neighborhood": "Mueller",
+      "job": "accountant",
+      "interests": [
+        "photography",
+        "yoga",
+        "startups"
+      ],
+      "traits": {
+        "career": 0.45,
+        "outdoors": 0.54,
+        "creative": 0.08,
+        "nightlife": 0.12,
+        "bookish": 0.15
+      },
+      "availability": [
+        "fri-evening",
+        "sat-evening"
+      ],
+      "chapter": "Accountant by day. Weekends are for photography and yoga. Currently obsessed with startups."
+    },
+    {
+      "id": "u40",
+      "name": "Emery",
+      "age": 27,
+      "gender": "nonbinary",
+      "orientation": "straight",
+      "intent": "open",
+      "neighborhood": "South Congress",
+      "job": "accountant",
+      "interests": [
+        "photography",
+        "live music",
+        "wine"
+      ],
+      "traits": {
+        "career": 0.48,
+        "outdoors": 0.56,
+        "creative": 0.42,
+        "nightlife": 0.45,
+        "bookish": 0.45
+      },
+      "availability": [
+        "sun-day",
+        "sat-day",
+        "fri-evening"
+      ],
+      "chapter": "Accountant by day. Weekends are for photography and live music. Currently obsessed with wine."
+    },
+    {
+      "id": "u41",
+      "name": "Wes",
+      "age": 24,
+      "gender": "man",
+      "orientation": "straight",
+      "intent": "casual",
+      "neighborhood": "Zilker",
+      "job": "data analyst",
+      "interests": [
+        "ceramics",
+        "climbing",
+        "books"
+      ],
+      "traits": {
+        "career": 0.55,
+        "outdoors": 0.32,
+        "creative": 0.22,
+        "nightlife": 0.27,
+        "bookish": 0.17
+      },
+      "availability": [
+        "sat-day",
+        "sat-evening",
+        "fri-evening",
+        "sun-day"
+      ],
+      "chapter": "Data analyst by day. Weekends are for ceramics and climbing. Currently obsessed with books."
+    },
+    {
+      "id": "u42",
+      "name": "Kira",
+      "age": 30,
+      "gender": "woman",
+      "orientation": "straight",
+      "intent": "casual",
+      "neighborhood": "Downtown",
+      "job": "electrician",
+      "interests": [
+        "coffee",
+        "climbing",
+        "yoga"
+      ],
+      "traits": {
+        "career": 0.09,
+        "outdoors": 0.43,
+        "creative": 0.34,
+        "nightlife": 0.53,
+        "bookish": 0.07
+      },
+      "availability": [
+        "sun-day",
+        "fri-evening"
+      ],
+      "chapter": "Electrician by day. Weekends are for coffee and climbing. Currently obsessed with yoga."
+    },
+    {
+      "id": "u43",
+      "name": "Imani",
+      "age": 22,
+      "gender": "woman",
+      "orientation": "straight",
+      "intent": "open",
+      "neighborhood": "Zilker",
+      "job": "product manager",
+      "interests": [
+        "live music",
+        "board games",
+        "climbing"
+      ],
+      "traits": {
+        "career": 0.39,
+        "outdoors": 0.35,
+        "creative": 0.28,
+        "nightlife": 0.35,
+        "bookish": 0.28
+      },
+      "availability": [
+        "sun-day",
+        "sat-evening",
+        "sat-day"
+      ],
+      "chapter": "Product manager by day. Weekends are for live music and board games. Currently obsessed with climbing."
+    },
+    {
+      "id": "u44",
+      "name": "Kai",
+      "age": 31,
+      "gender": "man",
+      "orientation": "bi",
+      "intent": "casual",
+      "neighborhood": "North Loop",
+      "job": "barista & DJ",
+      "interests": [
+        "climbing",
+        "trail running",
+        "film"
+      ],
+      "traits": {
+        "career": 0.27,
+        "outdoors": 0.36,
+        "creative": 0.58,
+        "nightlife": 0.43,
+        "bookish": 0.56
+      },
+      "availability": [
+        "sat-evening",
+        "sat-day",
+        "fri-evening"
+      ],
+      "chapter": "Barista & DJ by day. Weekends are for climbing and trail running. Currently obsessed with film."
+    },
+    {
+      "id": "u45",
+      "name": "Eli",
+      "age": 32,
+      "gender": "man",
+      "orientation": "straight",
+      "intent": "serious",
+      "neighborhood": "Zilker",
+      "job": "grad student",
+      "interests": [
+        "live music",
+        "photography",
+        "paddleboarding"
+      ],
+      "traits": {
+        "career": 0.39,
+        "outdoors": 0.25,
+        "creative": 0.56,
+        "nightlife": 0.15,
+        "bookish": 0.16
+      },
+      "availability": [
+        "sat-day",
+        "thu-evening",
+        "sat-evening",
+        "fri-evening"
+      ],
+      "chapter": "Grad student by day. Weekends are for live music and photography. Currently obsessed with paddleboarding."
+    },
+    {
+      "id": "u46",
+      "name": "Mia",
+      "age": 26,
+      "gender": "woman",
+      "orientation": "gay",
+      "intent": "serious",
+      "neighborhood": "Mueller",
+      "job": "product manager",
+      "interests": [
+        "wine",
+        "yoga",
+        "podcasts"
+      ],
+      "traits": {
+        "career": 0.47,
+        "outdoors": 0.52,
+        "creative": 0.18,
+        "nightlife": 0.54,
+        "bookish": 0.33
+      },
+      "availability": [
+        "sun-day",
+        "sat-evening",
+        "fri-evening",
+        "sat-day"
+      ],
+      "chapter": "Product manager by day. Weekends are for wine and yoga. Currently obsessed with podcasts."
+    },
+    {
+      "id": "u47",
+      "name": "Vera",
+      "age": 23,
+      "gender": "woman",
+      "orientation": "straight",
+      "intent": "open",
+      "neighborhood": "Zilker",
+      "job": "teacher",
+      "interests": [
+        "climbing",
+        "hiking",
+        "paddleboarding"
+      ],
+      "traits": {
+        "career": 0.46,
+        "outdoors": 0.15,
+        "creative": 0.56,
+        "nightlife": 0.51,
+        "bookish": 0.48
+      },
+      "availability": [
+        "sun-day",
+        "fri-evening",
+        "thu-evening",
+        "sat-day"
+      ],
+      "chapter": "Teacher by day. Weekends are for climbing and hiking. Currently obsessed with paddleboarding."
+    },
+    {
+      "id": "u48",
+      "name": "Lucia",
+      "age": 32,
+      "gender": "woman",
+      "orientation": "straight",
+      "intent": "serious",
+      "neighborhood": "Travis Heights",
+      "job": "chef",
+      "interests": [
+        "coffee",
+        "photography",
+        "basketball"
+      ],
+      "traits": {
+        "career": 0.43,
+        "outdoors": 0.52,
+        "creative": 0.4,
+        "nightlife": 0.07,
+        "bookish": 0.37
+      },
+      "availability": [
+        "sun-day",
+        "sat-day",
+        "sat-evening"
+      ],
+      "chapter": "Chef by day. Weekends are for coffee and photography. Currently obsessed with basketball."
+    },
+    {
+      "id": "u49",
+      "name": "Ava",
+      "age": 35,
+      "gender": "woman",
+      "orientation": "straight",
+      "intent": "open",
+      "neighborhood": "Zilker",
+      "job": "nurse",
+      "interests": [
+        "yoga",
+        "coffee",
+        "tennis"
+      ],
+      "traits": {
+        "career": 0.15,
+        "outdoors": 0.56,
+        "creative": 0.44,
+        "nightlife": 0.2,
+        "bookish": 0.56
+      },
+      "availability": [
+        "fri-evening",
+        "sat-day",
+        "thu-evening"
+      ],
+      "chapter": "Nurse by day. Weekends are for yoga and coffee. Currently obsessed with tennis."
+    },
+    {
+      "id": "u50",
+      "name": "Leah",
+      "age": 30,
+      "gender": "woman",
+      "orientation": "bi",
+      "intent": "serious",
+      "neighborhood": "Zilker",
+      "job": "grad student",
+      "interests": [
+        "ceramics",
+        "hiking",
+        "cooking"
+      ],
+      "traits": {
+        "career": 0.39,
+        "outdoors": 0.16,
+        "creative": 0.57,
+        "nightlife": 0.51,
+        "bookish": 0.29
+      },
+      "availability": [
+        "sat-day",
+        "sat-evening"
+      ],
+      "chapter": "Grad student by day. Weekends are for ceramics and hiking. Currently obsessed with cooking."
+    },
+    {
+      "id": "u51",
+      "name": "Theo",
+      "age": 28,
+      "gender": "man",
+      "orientation": "straight",
+      "intent": "serious",
+      "neighborhood": "Mueller",
+      "job": "marketing lead",
+      "interests": [
+        "coffee",
+        "hiking",
+        "basketball"
+      ],
+      "traits": {
+        "career": 0.4,
+        "outdoors": 0.36,
+        "creative": 0.21,
+        "nightlife": 0.43,
+        "bookish": 0.39
+      },
+      "availability": [
+        "sat-evening",
+        "fri-evening",
+        "sat-day",
+        "thu-evening"
+      ],
+      "chapter": "Marketing lead by day. Weekends are for coffee and hiking. Currently obsessed with basketball."
+    },
+    {
+      "id": "u52",
+      "name": "Isla",
+      "age": 31,
+      "gender": "woman",
+      "orientation": "bi",
+      "intent": "friends-only",
+      "neighborhood": "Holly",
+      "job": "physical therapist",
+      "interests": [
+        "travel",
+        "climbing",
+        "yoga"
+      ],
+      "traits": {
+        "career": 0.08,
+        "outdoors": 0.42,
+        "creative": 0.56,
+        "nightlife": 0.22,
+        "bookish": 0.18
+      },
+      "availability": [
+        "sat-evening",
+        "fri-evening"
+      ],
+      "chapter": "Physical therapist by day. Weekends are for travel and climbing. Currently obsessed with yoga."
+    },
+    {
+      "id": "u53",
+      "name": "Anika",
+      "age": 25,
+      "gender": "woman",
+      "orientation": "straight",
+      "intent": "serious",
+      "neighborhood": "East Austin",
+      "job": "grad student",
+      "interests": [
+        "yoga",
+        "podcasts",
+        "art galleries"
+      ],
+      "traits": {
+        "career": 0.16,
+        "outdoors": 0.08,
+        "creative": 0.09,
+        "nightlife": 0.42,
+        "bookish": 0.5
+      },
+      "availability": [
+        "sun-day",
+        "sat-evening"
+      ],
+      "chapter": "Grad student by day. Weekends are for yoga and podcasts. Currently obsessed with art galleries."
+    }
+  ]
+}
