@@ -6,7 +6,7 @@ After: a Next.js app, phone-framed, where Maya (Austin) sees this week's group P
 Out of scope: auth, database, real Bumble data, a real matcher, multi-user state, production hardening.
 
 ## Context
-- Files: `src/lib/matcher.ts` (stand-in for Bumble's matcher), `src/lib/profile.ts` (apply updates), `src/lib/extraction.ts` (Claude + zod + retry), `src/app/api/*`, `src/components/*`, `prompts/*.md`, `scripts/seed.ts` → `src/data/users.json`
+- Files: `src/lib/matcher.ts` (stand-in for Bumble's matcher), `src/lib/profile.ts` (apply updates), `src/lib/extraction-schema.ts` + `src/lib/server/extract.ts` (Claude + zod + retry), `src/app/api/*`, `src/components/*`, `prompts/*.md`, `scripts/seed.ts` → `src/data/users.json`
 - Fixtures: `fixtures/demo/transcript.json`, `fixtures/demo/extraction.json` (Maya's scripted debrief, used by mock mode and tests)
 - Docs: ElevenLabs Agents React SDK (`@elevenlabs/react` 1.22, signed URL via `GET /v1/convai/conversation/get-signed-url`); Anthropic structured outputs (`betaZodOutputFormat`)
 - Constraints: keys server-side only; voice via signed URL; one Claude call per extraction (+1 retry max); mobile-first; footer "Concept prototype by Sophia Zhang, not affiliated with Bumble."
