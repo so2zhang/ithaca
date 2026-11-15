@@ -47,6 +47,20 @@ describe("S6 extraction validation and retry", () => {
     expect(checkExtraction(beesWords, userText)[0]).toContain("not an exact quote");
   });
 
+  it("rejects one-word quotes that only match inside other words", () => {
+    const tiny = { ...demoExtraction, people: [{ ...demoExtraction.people[2], evidence: "he" }] };
+    expect(checkExtraction(tiny, userText)[0]).toContain("not an exact quote");
+  });
+
+  it("after the retry, drops only the items with unverifiable quotes", async () => {
+    const paraphrased = { ...demoExtraction, people: [...demoExtraction.people.slice(0, 2), { ...demoExtraction.people[2], evidence: "Jordan made me laugh a lot" }] };
+    const { call, prompts } = scripted(paraphrased, paraphrased);
+    const result = await extractDebrief({ prompt: "P", userText, call });
+    expect(prompts).toHaveLength(2);
+    expect(result.people.map((p) => p.name)).toEqual(["Ethan", "Marcus"]);
+    expect(result.preference_updates).toEqual(demoExtraction.preference_updates);
+  });
+
   it("accepts quotes with different punctuation or curly apostrophes", () => {
     const curly = { ...demoExtraction, people: [{ ...demoExtraction.people[4], evidence: "Claire was sweet but we didn’t really connect" }] };
     expect(checkExtraction(curly, userText)).toEqual([]);

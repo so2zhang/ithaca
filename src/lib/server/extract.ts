@@ -1,7 +1,7 @@
 // Turns a debrief transcript into structured updates with Claude, validated, with one retry.
 import Anthropic from "@anthropic-ai/sdk";
 import { betaZodOutputFormat } from "@anthropic-ai/sdk/helpers/beta/zod";
-import { ExtractionSchema, checkExtraction, type Extraction } from "../extraction-schema";
+import { ExtractionSchema, checkExtraction, dropUnquoted, type Extraction } from "../extraction-schema";
 
 // Calls the model and returns whatever it produced (validated by the caller).
 export type ModelCall = (prompt: string) => Promise<unknown>;
@@ -21,7 +21,8 @@ export const callClaude: ModelCall = async (prompt) => {
   return res.parsed_output;
 };
 
-// Validate → on failure, retry once with the problems listed → still bad: throw.
+// Validate → on failure, retry once with the problems listed → if only quotes are still wrong,
+// drop those items (never show unverified quotes) → anything else still wrong: throw.
 export async function extractDebrief({ prompt, userText, call }: { prompt: string; userText: string; call: ModelCall }): Promise<Extraction> {
   let feedback = "";
   for (let attempt = 1; attempt <= 2; attempt++) {
@@ -31,6 +32,10 @@ export async function extractDebrief({ prompt, userText, call }: { prompt: strin
         ? checkExtraction(parsed.data, userText)
         : parsed.error.issues.map((i) => `${i.path.join(".")}: ${i.message}`);
       if (parsed.success && problems.length === 0) return parsed.data;
+      if (parsed.success && attempt === 2) {
+        const kept = dropUnquoted(parsed.data, userText);
+        if (checkExtraction(kept, userText).length === 0) return kept;
+      }
       feedback = `\n\nYour previous answer had these problems. Fix them:\n- ${problems.join("\n- ")}`;
     } catch (err) {
       if (attempt === 2) throw err;

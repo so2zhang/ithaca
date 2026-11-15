@@ -118,11 +118,14 @@ function LiveCallInner({ planInput, onEnd, onSwitchToText }: CallProps) {
       linesRef.current = [...linesRef.current, { role: role === "user" ? "user" : "bee", text: message }];
       setLines(linesRef.current);
     },
-    onDisconnect: () => {
+    onDisconnect: (details) => {
       if (ended.current) return;
       // Bee hung up on her own (she wraps up when done): treat it like pressing End.
       if (linesRef.current.some((l) => l.role === "user")) finish();
-      else setError("Bee hung up before you talked. If this is a new agent, check its Security → Overrides settings in ElevenLabs. You can switch to text.");
+      // Keep a more specific error from onError if there is one.
+      else if (details.reason === "agent")
+        setError((e) => e ?? "Bee hung up before you talked. If this is a new agent, check its Security → Overrides settings in ElevenLabs. You can switch to text.");
+      else setError((e) => e ?? "The voice connection dropped. You can switch to text.");
     },
     onError: (message) => setError(`Voice error: ${message}. You can switch to text.`),
   });
